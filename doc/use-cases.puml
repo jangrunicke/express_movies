@@ -1,0 +1,23 @@
+@startuml Use Cases
+
+left to right direction
+skinparam packageStyle rect
+skinparam componentStyle uml12
+
+actor Gast
+actor Admin
+
+rectangle film {
+    Gast --> (Film suchen)
+    Gast --> (Datei herunterladen)
+    Admin --> (Film suchen)
+    Admin --> (Film ändern)
+    Admin --> (Film anlegen)
+    Admin --> (Film löschen)
+    Admin --> (Datei hochladen)
+    Admin --> (Datei herunterladen)
+}
+
+footer (c) Jan Grunicke
+
+@enduml

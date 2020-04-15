@@ -1,0 +1,52 @@
+@startuml Anwendungskern
+
+!pragma useNewPackage
+skinparam ClassAttributeIconSize 0
+skinparam componentStyle uml12
+
+package mongoose {
+    class Schema
+
+    class "model()" as model
+    hide model circle
+}
+
+package film.entity {
+    class "validateFilm()" as validateFilm
+    hide validateBuch circle
+
+    class FilmModel
+    hide FilmModel circle
+
+    FilmModel ..> Schema
+    FilmModel ..> model
+    FilmModel ..> validateFilm
+
+    FilmData ..> FilmArt
+    FilmData ..> FilmBewertung
+
+    enum FilmArt {
+        ACTION
+        THRILLER
+        KOMÖDIE
+        ROMANTIK
+        DOKUMENTATION
+        KINDERFILM
+    }
+
+    interface FilmData <<entity>> {
+        + _id?: string
+        + __v?: number
+        + createdAt?: number
+        + updatedAt?: number
+        + titel: string
+        + rating?: number
+        + art?: FilmArt
+        + regisseur: any
+        + datum?: Date
+        + schlagwoerter?: Array<string>
+    }   
+}
+    hide empty members
+
+    footer (c) Jan Grunicke

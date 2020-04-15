@@ -1,0 +1,29 @@
+# https://git-scm.com/docs/gitignore#_pattern_format
+
+# Abhaengige Dateien durch npm
+node_modules
+
+# Uebersetzte oder generierte Dateien
+build
+dist
+doc/html/*
+temp
+tmp
+
+node-ts
+coverage
+.nyc_output
+*.log
+
+# IDEs und Editoren
+.idea
+*.iml
+.sonarlint
+.vscode
+.env
+
+yarn.lock
+
+# System Dateien
+.DS_Store
+Thumbs.db

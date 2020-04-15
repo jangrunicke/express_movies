@@ -1,0 +1,46 @@
+@startuml Anwendungskern
+
+!pragma useNewPackage
+skinparam class AttributeIconSize 0
+skinparam componentStyle uml12
+
+interface Promise<T>
+
+package shared {
+  class "sendMail()" as sendMail
+  hide sendMail circle
+}
+
+package film {
+  package entity {
+    class FilmModel
+    hide FilmModel circle
+
+    class "validateFilm()" as validateFilm
+    hide validateFilm circle
+
+    interface FilmData <<entity>>
+  }
+
+  package service #DDDDDD {
+    FilmService ..> Promise
+    FilmService ..> FilmModel
+    FilmService ..> FilmData
+    FilmService ..> validateFilm
+    FilmService ..> sendMail
+    
+    class BuchService << control >> {
+      + async findById(id: string): Promise<FilmData | undefined>
+      + async find(query?: any): Promise<Array<FilmData>>
+      + async create(film: FilmData): Promise<FilmData>
+      + async update(film: FilmData, version: string): Promise<FilmData>
+      + async delete(id: string): Promise<boolean>
+    }
+  }
+}
+
+hide empty members
+
+footer (c) Jürgen Zimmermann
+
+@enduml
