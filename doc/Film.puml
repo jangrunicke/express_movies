@@ -26,10 +26,8 @@ package film.entity {
     FilmData ..> FilmBewertung
 
     enum FilmArt {
-        ACTION
-        THRILLER
+        DRAMA
         KOMÖDIE
-        ROMANTIK
         DOKUMENTATION
         KINDERFILM
     }
