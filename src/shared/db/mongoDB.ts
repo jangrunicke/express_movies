@@ -1,9 +1,9 @@
-import { dbConfig, logger } form '../../shared';
+import { dbConfig, logger } from '../../shared';
 import JSON5 from 'json5';
 import { MongoClient } from 'mongodb';
 
 export const connectMongoDB = async () => {
-    const {dbName, url } = dbConfig;
+    const { dbName, url } = dbConfig;
     logger.debug(`mongodb.connectMongoDB(): url=${url}`);
     // TODO Conneciton Pooling
     const client = new MongoClient(url, {
@@ -11,13 +11,13 @@ export const connectMongoDB = async () => {
         useUnifiedTopology: true,
     });
     await client.connect();
-    logger.debug('mongodb.connectMongoDB(): DB-Client geoofnet';
+    logger.debug('mongodb.connectMongoDB(): DB-Client geoeffnet');
     const db = client.db(dbName);
 
     return { db, client };
 };
 
-export const closeMongoDBClient = (client:MongoClient) => {
+export const closeMongoDBClient = (client: MongoClient) => {
     client
         .close()
         .then(() =>
