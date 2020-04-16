@@ -21,7 +21,7 @@ export const filmSchema = new Schema(
         rating: { type: Number, min: 0, max: 5 },
         art: {
             type: String,
-            enum: ['DRAMA', 'KOMÖDIE', 'DOKUMENTATION', 'KINDERFILM']
+            enum: ['DRAMA', 'KOMÖDIE', 'DOKUMENTATION', 'KINDERFILM'],
         },
         regisseur: Schema.Types.Mixed,
         datum: Date,
