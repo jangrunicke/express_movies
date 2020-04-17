@@ -4,7 +4,7 @@ import {
     MultipleFilesError,
 } from './errors';
 import { GridFSBucket, ObjectId } from 'mongodb';
-import { closeMongoDBClient, closeMongoDBClient, saveReadable, connectMongoDB } from '../../shared';
+import { closeMongoDBClient, connectMongoDB, saveReadable } from '../../shared';
 import { FilmModel } from '../entity';
 import JSON5 from 'json5';
 import { Readable } from 'stream';
@@ -18,7 +18,7 @@ export class FilmFileService {
         );
 
         // Gibt es ein Film zur angegebenen ID?
-        const Film = await FilmModel.findById(id);
+        const film = await FilmModel.findById(id);
         if (film === null) {
             return false;
         }
@@ -38,7 +38,7 @@ export class FilmFileService {
         return true;
     }
 
-    async find(filename:string) {
+    async find(filename: string) {
         logger.debug(`FilmFileServie.findFile(): filename=${filename}`);
         await this.checkFilename(filename);
 
@@ -118,4 +118,4 @@ export class FilmFileService {
                 );
         }
     }
- }
+}
