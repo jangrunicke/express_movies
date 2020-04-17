@@ -54,7 +54,7 @@ export const filme = [
             nachame: 'Andersen',
         },
         datum: new Date('2014-6-26'),
-        schlagwoerter: ['Umewelt'],
+        schlagwoerter: ['UMWELT'],
         __v: 0,
         createdAt: new Date('2020-04-15'),
         updatedAt: new Date('2020-04-15'),
