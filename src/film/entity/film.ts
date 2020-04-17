@@ -20,7 +20,7 @@ export interface Film {
 export interface FilmData extends Film {
     createdAt?: number;
     updatedAt?: number;
-    _links: {
+    _links?: {
         self?: { href: string };
         list?: { href: string };
         add?: { href: string };
