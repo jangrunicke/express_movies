@@ -60,14 +60,14 @@ if (serverConfig.cloud === undefined) {
 // E J S
 // -----------------------------------------------------------------------------
 
-// Views mit Partials
-const viewsSrc = join(src, 'views');
-const viewsDist = join(dist, 'views');
-mkdirSync(viewsDist, { recursive: true });
-copySync(viewsSrc, viewsDist);
+// // Views mit Partials
+// const viewsSrc = join(src, 'views');
+// const viewsDist = join(dist, 'views');
+// mkdirSync(viewsDist, { recursive: true });
+// copySync(viewsSrc, viewsDist);
 
-// CSS, Bilder, Favicon, manifest.json, robots.txt
-const publicSrc = join(src, 'public');
-const publicDist = join(dist, 'public');
-mkdirSync(publicDist, { recursive: true });
-copySync(publicSrc, publicDist);
+// // CSS, Bilder, Favicon, manifest.json, robots.txt
+// const publicSrc = join(src, 'public');
+// const publicDist = join(dist, 'public');
+// mkdirSync(publicDist, { recursive: true });
+// copySync(publicSrc, publicDist);

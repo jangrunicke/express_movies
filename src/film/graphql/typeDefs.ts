@@ -6,7 +6,7 @@ export const typeDefs = `
         DOCUMENTATION
     }
     
-    tpye Film {
+    type Film {
         _id: ID!
         titel: String!
         rating: Int
