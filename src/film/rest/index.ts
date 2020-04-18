@@ -3,7 +3,7 @@ import { FilmFileRequestHandler } from './film-file.request-handler';
 import { FilmRequestHandler } from './film.request-handler';
 
 const handler = new FilmRequestHandler();
-const filehandler = FilmFileRequestHandler();
+const fileHandler = new FilmFileRequestHandler();
 
 export const findById = (req: Request, res: Response) =>
     handler.findById(req, res);
