@@ -1,0 +1,11 @@
+###
+### N e t z w e r k - V e r b i n d u n g  n o t w e n d i g
+###
+
+@host = localhost:8443
+
+### Suche alle Filme
+https://{{host}}/filme
+
+### Suche mit vorhandener Film-ID
+https://{{host}}/buecher/00000000-0000-0000-0000-000000000001
