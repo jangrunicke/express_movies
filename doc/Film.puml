@@ -48,3 +48,5 @@ package film.entity {
     hide empty members
 
     footer (c) Jan Grunicke
+
+    @enduml

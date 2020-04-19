@@ -15,10 +15,10 @@ const passwordKorrekt: object = {
     password: 'p',
 };
 
-const passwordFalsch: object = {
-    username: 'admin',
-    password: 'FALSCH',
-};
+// const passwordFalsch: object = {
+//     username: 'admin',
+//     password: 'FALSCH',
+// };
 
 // -----------------------------------------------------------------------------
 // T e s t s

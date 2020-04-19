@@ -12,7 +12,7 @@
 
 import { HttpStatus } from '../../../src/shared';
 import { PATHS } from '../../../src/app';
-import type { FilmData } from '../../../src/film/entity/types';
+// import type { FilmData } from '../../../src/film/entity/types';
 import type { Server } from 'http';
 import chai from 'chai';
 import { createTestserver } from '../../createTestserver';
