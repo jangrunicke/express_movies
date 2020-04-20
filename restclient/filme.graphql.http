@@ -1,0 +1,108 @@
+###
+### N e t z w e r k   -  V e r b i n d u n g   n o t w e n d i g
+###
+
+@host = localhost:8443
+
+### Suche titel und art von allen Filmen
+POST https://localhost:8443/api
+Content-Type: : application/json
+X-REQUEST-TYPE: GraphQL
+
+{
+    filme {
+        titel
+        art
+    }
+}
+
+
+### Suche titel und art von einem Film mit vorhandener Film-ID
+POST https://localhost:8443/api
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+{
+  film(id: "00000000-0000-0000-0000-000000000001") {
+    titel
+    art
+  }
+}
+
+
+### Suche titel und art von Filmen mit vorhandenem Titel
+POST https://localhost:8443/api
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+{
+  filme(titel: "Sieben") {
+    titel
+    art
+  }
+}
+
+
+### Suche titel, art und schlagwoerter von Filmen mit vorhandenem Titel
+POST https://localhost:8443/api
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+{
+  filme(titel: "k") {
+    titel
+    art
+    schlagwoerter
+  }
+}
+
+
+### Neuer Film anlegen
+POST https://localhost:8443/api
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+  createFilm(
+    titel: "Test"
+    rating: 1
+    art: "DRAMA"
+    datum: null
+    schlagwoerter: ["DISNEY"]
+  ) {
+    _id
+  }
+}
+
+
+### Vorhandener Film aktualisieren
+POST https://localhost:8443/api
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+  updateFilm(
+    _id: "00000000-0000-0000-0000-000000000003",
+    titel: "Geaendert",
+    rating: 5,
+    art: "DOCUMENTATION",
+    datum: "2018-01-31",
+    schlagwoerter: [
+      "UMWELT",
+      "PSYCHO"
+    ],
+    version: 0
+  ) {
+    version
+  }
+}
+
+
+### Vorhandener Film loeschen
+POST https://localhost:8443/api
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+mutation {
+  deleteBuch(id: "00000000-0000-0000-0000-000000000004")
+}

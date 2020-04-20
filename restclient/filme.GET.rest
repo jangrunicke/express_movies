@@ -10,5 +10,37 @@ https://{{host}}/filme
 ### Suche mit vorhandener Film-ID
 https://{{host}}/filme/00000000-0000-0000-0000-000000000001
 
-### Suche mit ungueltiger Buch-ID
+### Suche mit vorhandener Film-ID und Versionsnummer
+https://{{host}}/filme/00000000-0000-0000-0000-000000000001
+If-None-Match: "0"
+
+### Suche mit vorhandener Film-ID und falscher Versionsnummer
+https://{{host}}/filme/00000000-0000-0000-0000-000000000001
+If-None-Match: 0
+
+### Suche mit ungueltiger Film-ID
 https://{{host}}/filme/YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY
+
+### Suche mit nicht-vorhandener Film-ID
+https://{{host}}/filme/99999999-9999-9999-9999-999999999999
+
+### Suche mit vorhandenem Titel
+https://{{host}}/filme?titel=a
+
+### Suche mit vorhandenen Schlagwoertern
+https://{{host}}/filme?javascript=true&typescript=true
+
+### Suche mit vorhandenem Schlagwort "VERBRECHEN"
+https://{{host}}/filme?verbrechen=true
+
+### Suche mit vorhandenem Schlagwort "DISNEY"
+https://{{host}}/filme?&disney=true
+
+### Suche mit gueltiger Film
+https://{{host}}/filme?art=DRAMA
+
+### Suche mit gueltigem Rating
+https://{{host}}/filme?rating=9
+
+### Optionen zu Buch-ID
+OPTIONS https://{{host}}/filme/00000000-0000-0000-0000-000000000001
