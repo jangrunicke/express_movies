@@ -52,8 +52,8 @@ const limiter = rateLimit(rateLimitOptions);
 // const uploader = multer({storage})
 
 export const PATHS = {
-    filme: 'filme',
-    login: 'login',
+    filme: '/filme',
+    login: '/login',
     graphql: '/api',
     html: '/html',
 };
