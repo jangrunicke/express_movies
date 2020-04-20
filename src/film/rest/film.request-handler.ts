@@ -25,7 +25,7 @@ export class FilmRequestHandler {
     // * BottleJS https://github.com/young-steveo/bottlejs
     private readonly service = new FilmService();
 
-    // vgl Kotlin: Schluesselwort "supend"
+    // vgl Kotlin: Schluesselwort "suspend"
     async findById(req: Request, res: Response) {
         const versionHeader = req.header('If-None-Match');
         logger.debug(

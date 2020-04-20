@@ -9,3 +9,6 @@ https://{{host}}/filme
 
 ### Suche mit vorhandener Film-ID
 https://{{host}}/filme/00000000-0000-0000-0000-000000000001
+
+### Suche mit ungueltiger Buch-ID
+https://{{host}}/filme/YYYYYYYY-YYYY-YYYY-YYYY-YYYYYYYYYYYY
