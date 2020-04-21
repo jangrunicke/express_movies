@@ -15,10 +15,10 @@ const passwordKorrekt: object = {
     password: 'p',
 };
 
-// const passwordFalsch: object = {
-//     username: 'admin',
-//     password: 'FALSCH',
-// };
+const passwordFalsch: object = {
+    username: 'admin',
+    password: 'FALSCH',
+};
 
 // -----------------------------------------------------------------------------
 // T e s t s
@@ -47,5 +47,29 @@ describe('REST-Schnittstellen /login', () => {
         const { status, body } = response;
         expect(status).to.be.equal(HttpStatus.OK);
         expect(body.token as string).to.match(/.+\..+\..+/u);
+    });
+
+    test('Login mit falschem Passwort', async () => {
+        const response = await request(server)
+            .post(`${loginPath}`)
+            .set('Content-type', 'application/x-www-form-urlencoded')
+            .send(passwordFalsch)
+            .trustLocalhost();
+
+        const { status, body } = response;
+        expect(status).to.be.equal(HttpStatus.UNAUTHORIZED);
+        expect(Object.entries(body)).to.have.lengthOf(0);
+    });
+
+    test('Login ohne Benutzerkennung', async () => {
+        const response = await request(server)
+            .post(`${loginPath}`)
+            .set('Content-type', 'application/x-www-form-urlencoded')
+            .send({})
+            .trustLocalhost();
+
+        const { status, body } = response;
+        expect(status).to.be.equal(HttpStatus.UNAUTHORIZED);
+        expect(Object.entries(body)).to.have.lengthOf(0);
     });
 });
