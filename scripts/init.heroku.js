@@ -58,8 +58,8 @@ const viewsDist = join(dist, 'views');
 mkdirSync(viewsDist, { recursive: true });
 copySync(viewsSrc, viewsDist);
 
-// CSS, Bilder, Favicon, manifest.json, robots.txt
-const publicSrc = join(src, 'public');
-const publicDist = join(dist, 'public');
-mkdirSync(publicDist, { recursive: true });
-copySync(publicSrc, publicDist);
+// // CSS, Bilder, Favicon, manifest.json, robots.txt
+// const publicSrc = join(src, 'public');
+// const publicDist = join(dist, 'public');
+// mkdirSync(publicDist, { recursive: true });
+// copySync(publicSrc, publicDist);
