@@ -17,7 +17,7 @@
     "test:coverage": "npm t -- --coverage",
     "asciidoc": "ts-node scripts/asciidoc",
     "clean": "ts-node scripts/clean",
-    "curl:heroku": "C:\\Zimmermann\\Git\\mingw64\\bin\\curl --include --tlsv1.2 --insecure https://fathomless-cove-65777.herokuapp.com/filme/00000000-0000-0000-0000-000000000001",
+    "curl:heroku": "C:\\Zimmermann\\Git\\mingw64\\bin\\curl --include --tlsv1.2 --insecure https://warm-brushlands-35317.herokuapp.com//filme/00000000-0000-0000-0000-000000000001",
     "curl:openshift": "C:\\Zimmermann\\Git\\mingw64\\bin\\curl --include http://beispiel-jz.apps.us-east-1.starter.openshift-online.com:8443/filme/00000000-0000-0000-0000-000000000001",
     "depcheck": "depcheck",
     "deploy:heroku": "git push heroku master",
@@ -28,7 +28,7 @@
     "init": "ts-node scripts/init",
     "leasot": "leasot --exit-nicely src/**/*.ts",
     "mongo": "ts-node scripts/mongo",
-    "open:heroku": "heroku open -a https://fathomless-cove-65777.herokuapp.com/filme/00000000-0000-0000-0000-000000000001",
+    "open:heroku": "heroku open -a https://warm-brushlands-35317.herokuapp.com//filme/00000000-0000-0000-0000-000000000001",
     "prettier": "npx prettier --write src/**/*.ts scripts/*.?s test/**/*.ts",
     "heroku-postbuild": "npm run tsc && node scripts/init.heroku",
     "tsc": "npx tsc"
