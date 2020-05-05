@@ -13,7 +13,7 @@ package mongoose {
 
 package film.entity {
     class "validateFilm()" as validateFilm
-    hide validateBuch circle
+    hide validateFilm circle
 
     class FilmModel
     hide FilmModel circle

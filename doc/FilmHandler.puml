@@ -31,7 +31,7 @@ package Film {
   }
 
   package service {
-    class BuchService << control >> {
+    class FilmService << control >> {
     }
   }
 

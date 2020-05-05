@@ -29,7 +29,7 @@ package film {
     FilmService ..> validateFilm
     FilmService ..> sendMail
     
-    class BuchService << control >> {
+    class FilmService << control >> {
       + async findById(id: string): Promise<FilmData | undefined>
       + async find(query?: any): Promise<Array<FilmData>>
       + async create(film: FilmData): Promise<FilmData>
