@@ -1,0 +1,66 @@
+@startuml Komponenten
+
+skinparam componentStyle uml12
+
+left to right direction
+
+actor RESTClient
+
+node "Funktionen mit Express" {
+    boundary Router
+    [Handler Functions]
+}
+
+node "Klassen / objektorientiert" {
+    [FilmHandler]
+    [FilmFileHandler]
+
+    [FilmService]
+    [FilmFileService]
+}
+
+[sendMail()] as sendMail
+
+entitty FilmModel
+
+cloud {
+    [Mongoose]
+}
+
+cloud {
+    [MongoDB\nNative Driver]
+}
+
+cloud {
+    [nodemailer]
+}
+
+database "acme (MongoDB)" {
+    [Collection Film]
+    [GridFs]
+}
+
+node {
+    [Mailserver]
+}
+
+RESTClient ~~> [Router]
+[Router] ..> [Handler Functions]
+[Handler Functions] ..> [FilmHandler]
+[Handler Functions] ..> [FilmFileHandler]
+
+[FilmHandler] --> [FilmService]
+[FilmFileHandler] --> [FilmFileService]
+[FilmService] ..> [FilmModel]
+[FilmFileService] .. >[FilmModel]
+
+[FilmModel] ~~> [Mongoose]
+[FilmFileService] ~~> [MongoDB\nNativeDriver]
+[sendMail] ~~> [nodemailer]
+[Mongoose] ~~> [Collection Film]
+[MongoDB\nNative Driver] ~~> [GridFS]
+
+[FilmService] --> [sendMail]
+[nodemailer] ~~> [Mailserver]
+
+@enduml
