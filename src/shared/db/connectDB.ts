@@ -1,3 +1,5 @@
+/* eslint-disable no-invalid-this,no-process-env,no-process-exit */
+
 import { Schema, connect, connection, pluralize } from 'mongoose';
 import type { ConnectionOptions } from 'mongoose';
 import JSON5 from 'json5';
