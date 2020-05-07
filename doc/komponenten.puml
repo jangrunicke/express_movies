@@ -21,7 +21,7 @@ node "Klassen / objektorientiert" {
 
 [sendMail()] as sendMail
 
-entitty FilmModel
+entity FilmModel
 
 cloud {
     [Mongoose]
