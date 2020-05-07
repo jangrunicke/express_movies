@@ -52,7 +52,7 @@ RESTClient ~~> [Router]
 [FilmHandler] --> [FilmService]
 [FilmFileHandler] --> [FilmFileService]
 [FilmService] ..> [FilmModel]
-[FilmFileService] .. >[FilmModel]
+[FilmFileService] ..> [FilmModel]
 
 [FilmModel] ~~> [Mongoose]
 [FilmFileService] ~~> [MongoDB\nNativeDriver]
